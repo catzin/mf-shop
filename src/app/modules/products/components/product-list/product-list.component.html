@@ -1,0 +1,27 @@
+<div class="content">
+    <mat-toolbar  class="tool" color="accent">
+        <div class="title">
+          <h1>Categoria: {{active$ | async | titlecase}}</h1>
+        </div>
+        <div class="icon">
+          <button mat-fab color="primary" [matBadge]="itemsCart().toString()" matTooltip="Ver items" (click)="openCsrt()">
+            <mat-icon>add_shopping_cart</mat-icon>
+          </button>
+        </div>
+       
+    </mat-toolbar>
+      <div class="products">
+      @if (loading()) {
+        <mat-spinner diameter="50"></mat-spinner>
+      }@else {
+        <div class="products__list">
+          @for (prod of prods$ | async; track $index) {
+            <app-product-card [product]="prod"></app-product-card>
+           }
+        </div>
+      }
+    </div>
+</div>
+
+
+<!-- {{prods$ | async | json}} -->

@@ -1,0 +1,26 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="true">
+    <div class="logo">
+      <img src="http://localhost:4021/assets/images/shop.png" alt="" srcset="">
+    </div>
+    <mat-selection-list>
+
+      @if(loading()) {
+      <mat-spinner diameter="50"></mat-spinner>
+      }@else {
+
+      @for (category of links(); track $index) {
+
+      <mat-list-item (click)="selectedOption(category)">
+        <mat-icon matListItemIcon style="color: red;">flash_on</mat-icon>
+        <div matListItemTitle style="font-weight: 500;">{{category | titlecase}}</div>
+      </mat-list-item>
+      }
+      }
+    </mat-selection-list>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

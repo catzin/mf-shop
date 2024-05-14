@@ -1,0 +1,32 @@
+<div class="content">
+    @if (data.length > 0) {
+        @for (item of data; track $index) {
+            <div class="prod">
+                <div class="prod__picture">
+                    <img [src]="item.image" alt="" srcset="">
+                </div>
+                <div class="prod__price">{{item.price | currency}}</div>
+                <div class="prod__counter">
+                    <!-- <button mat-mini-fab>
+                        <mat-icon>add</mat-icon>
+                    </button> -->
+                    <div class="quaintity">{{item.quantityCart}}</div>
+                    <!-- <button mat-mini-fab>
+                        <mat-icon>remove</mat-icon>
+                    </button> -->
+                </div>
+                <div class="prod__actions">
+                    <button mat-raised-button color="warn" (click)="deleteFromCart(item.id)">Eliminar</button>
+                </div>
+        
+            </div>
+            }
+        
+    }@else {
+
+        <h1>No hay productos en el carrito :(</h1>
+
+    }
+   
+
+</div>

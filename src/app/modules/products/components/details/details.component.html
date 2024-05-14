@@ -1,0 +1,18 @@
+<div class="actions">
+    <button mat-raised-button (click)="toProducts()" color="warn">Regresar</button>
+</div>
+<div class="content">
+
+    <div class="content__image">
+        <img [src]="prod.image" alt="" srcset="">
+    </div>
+    <div class="content__info">
+        <!-- {{prod | json}} -->
+
+        <h1 class="title">{{prod.title}}</h1>
+        <p class="description">{{prod.description}}</p>
+        <h1 class="price">{{ prod.price | currency}}</h1>
+
+        <p>Category : {{prod.category}}</p>
+    </div>
+</div>

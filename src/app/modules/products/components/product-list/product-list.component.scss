@@ -1,0 +1,21 @@
+.products {
+
+    margin-top: 1rem;
+
+    &__list {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+
+       
+       
+
+    }
+}
+
+.tool{
+   display: flex;
+   justify-content: space-between;
+   border-radius: 12px;
+}

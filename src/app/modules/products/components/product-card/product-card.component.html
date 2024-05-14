@@ -1,0 +1,32 @@
+<mat-card class="card">
+    <!-- <mat-card-header>
+        <mat-card-title class="title">{{product.category}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image class="image" [src]="product.image" alt="Photo of product">
+    <mat-card-content>
+    </mat-card-content> -->
+
+    <mat-card-content class="card-content">
+        <div class="title"></div>
+        <div class="image">
+            <img [src]="product.image" alt="" srcset="">
+        </div>
+        <div class="price">{{product.price | currency}}</div>
+        <div class="counter">
+            <button mat-mini-fab (click)="addOne()">
+                <mat-icon>add</mat-icon>
+            </button>
+            <div> {{product.quantityCart }} </div>
+            <button mat-mini-fab (click)="subOne()">
+                <mat-icon>remove</mat-icon>
+            </button>
+        </div>
+    </mat-card-content>
+
+    <mat-card-actions class="actions">
+        <button mat-raised-button color="primary" (click)="toDetails()">Detalles</button>
+        <button mat-fab (click)="addToCart()" matTooltip="Agregar">
+            <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>
